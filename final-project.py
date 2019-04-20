@@ -319,10 +319,10 @@ if cdesCount == carlsonCount:
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
 
 #Max Score Situation
-if cdesCount = 5 and cdesCount == cfansCount == cseCount == claCount == cbsCount == carlsonCount:
+if cdesCount == 5 and cdesCount == cfansCount == cseCount == claCount == cbsCount == carlsonCount:
     print ("All of the colleges have the top score of 5. Please retake survey.")
 
 #0 situation
-if cdesCount = 0 and cdesCount == cfansCount == cseCount == claCount == cbsCount == carlsonCount:
+if cdesCount == 0 and cdesCount == cfansCount == cseCount == claCount == cbsCount == carlsonCount:
     print ("You have answered all of the questions with 'N'. Please retake survey.")
 
