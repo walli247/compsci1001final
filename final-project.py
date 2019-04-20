@@ -187,7 +187,7 @@ print("The number of times this survey hsa been taken is: ", total)
 
 #Tie situation
 #No repeats for each tie of (a == b) and (b == a) because that would be redundant
-if cseCount == claCount:
+if cseCount == claCount and (claCount > carlsonCount) and (claCount > cfansCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Science and Engineering and the College of Liberal Arts.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
     try:
@@ -213,7 +213,7 @@ if cseCount == claCount:
         f_cla.write(str(1))
         f_cla.close()
 
-if cseCount == cfansCount:
+if cseCount == cfansCount and (cfansCount > claCount) and (cfansCount > carlsonCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Science and Engineering and the College of Food, Agriculture and Natural Resources.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
     try:
@@ -239,7 +239,7 @@ if cseCount == cfansCount:
         f_cfans.write(str(1))
         f_cfans.close()
 
-if cseCount == carlsonCount:
+if cseCount == carlsonCount and (carlsonCount > claCount) and (carlsonCount > cfansCount) and (carlsonCount > cdesCount) and (carlsonCount > cseCount) and (carlsonCount > cehdCount):
     print ("You have a tie high score with the College of Science and Engineering and the Carlson School of Management.")
     print ("We reccommend that you take a look at both colleges and see which one fits best to your needs.")
     try:
@@ -265,7 +265,7 @@ if cseCount == carlsonCount:
         f_carlson.write(str(1))
         f_carlson.close()
 
-if cseCount == cdesCount:
+if cseCount == cdesCount and (cdesCount > claCount) and (cdesCount > carlsonCount) and (cdesCount > cfansCount) and (cdesCount > cbsCount) and (cdesCount > cehdCount):
     print ("You have a tie high score with the College of Science and Engineering and the College of Design.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
     try:
@@ -290,33 +290,370 @@ if cseCount == cdesCount:
         f_cdes = open("cdes.log", "w")
         f_cdes.write(str(1))
         f_cdes.close()
-if cseCount == cdesCount:
-    print ("You have a tie high score with the College of Science and Engineering and the College of Design.")
-    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if cseCount == cbsCount:
+
+if cseCount == cbsCount and (cbsCount > claCount) and (cbsCount > carlsonCount) and (cbsCount > cfansCount) and (cbsCount > cdesCount) and (cbsCount > cehdCount):
     print ("You have a tie high score with the College of Science and Engineering and the College Biological Sciences.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if claCount == cfansCount:
+    try:
+        f_cse = open("cse.log", "r")
+        old_cse = int(f_cse.read())
+        f_cse.close()
+        f_cse = open("cse.log", "w")
+        f_cse.write(str(old_cse + 1))
+        f_cse.close()
+    except FileNotFoundError:
+        f_cse = open("cse.log", "w")
+        f_cse.write(str(1))
+        f_cse.close()
+    try:
+        f_cbs = open("cbs.log", "r")
+        old_cbs = int(f_cbs.read())
+        f_cbs.close()
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(old_cbs + 1))
+        f_cbs.close()
+    except FileNotFoundError:
+        f_cbs = open("cdes.log", "w")
+        f_cbs.write(str(1))
+        f_cbs.close()
+
+if claCount == cfansCount and (claCount > cseCount) and (claCount > carlsonCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Liberal Arts and the College of Food, Agriculture and Natural Resources.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if claCount == cdesCount:
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(old_cla + 1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+    try:
+        f_cfans = open("cfans.log", "r")
+        old_cfans = int(f_cfans.read())
+        f_cfans.close()
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(old_cfans + 1))
+        f_cfans.close()
+    except FileNotFoundError:
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(1))
+        f_cfans.close()
+
+if claCount == cdesCount and (claCount > cseCount) and (claCount > carlsonCount) and (claCount > cfansCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Liberal Arts and the College of Design.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if claCount == carlsonCount:
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(old_cla + 1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(old_cdes + 1))
+        f_cfans.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+if claCount == carlsonCount and (claCount > cseCount) and (claCount > cfansCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Liberal Arts and the Carlson School of Management.")
     print ("We reccommend that you take a look at both colleges and see which one fits best to your needs.")
-if claCount == cbsCount:
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(old_cla + 1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+    try:
+        f_carlson = open("carlson.log", "r")
+        old_carlson = int(f_carlson.read())
+        f_carlson.close()
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(old_carlson + 1))
+        f_carlson.close()
+    except FileNotFoundError:
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(1))
+        f_carlson.close()
+
+if claCount == cbsCount and (claCount > cseCount) and (claCount > carlsonCount) and (claCount > cfansCount) and (claCount > cdesCount) and (claCount > cehdCount):
     print ("You have a tie high score with the College of Liberal Arts and the College of Biological Sciences.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if cdesCount == cbsCount:
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(old_cla + 1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+    try:
+        f_cbs = open("cbs.log", "r")
+        old_cbs = int(f_cbs.read())
+        f_cbs.close()
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(old_cbs + 1))
+        f_cbs.close()
+    except FileNotFoundError:
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(1))
+        f_cbs.close()
+
+if cdesCount == cbsCount and (cdesCount > cseCount) and (cdesCount > claCount) and (cdesCount > carlsonCount) and (cdesCount > cfansCount) and (cdesCount > cehdCount):
     print ("You have a tie high score with the College of Design and the College of Biological Sciences.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if cdesCount == cfansCount:
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(old_cdes + 1))
+        f_cdes.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+    try:
+        f_cbs = open("cbs.log", "r")
+        old_cbs = int(f_cbs.read())
+        f_cbs.close()
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(old_cbs + 1))
+        f_cbs.close()
+    except FileNotFoundError:
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(1))
+        f_cbs.close()
+
+if cdesCount == cfansCount and (cdesCount > cseCount) and (cdesCount > claCount) and (cdesCount > carlsonCount) and (cdesCount > cbsCount) and (cdesCount > cehdCount):
     print ("You have a tie high score with the College of Design and the College of Food, Agriculture and Natural Resources.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
-if cdesCount == carlsonCount:
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(old_cdes + 1))
+        f_cdes.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+    try:
+        f_cfans = open("cfans.log", "r")
+        old_cfans = int(f_cfans.read())
+        f_cfans.close()
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(old_cfans + 1))
+        f_cfans.close()
+    except FileNotFoundError:
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(1))
+        f_cfans.close()
+
+if cdesCount == carlsonCount and (cdesCount > cseCount) and (cdesCount > claCount) and (cdesCount > cfansCount) and (cdesCount > cbsCount) and (cdesCount > cehdCount):
     print ("You have a tie high score with the College of Design and the Carlson School of Management.")
     print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(old_cdes + 1))
+        f_cdes.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+    try:
+        f_carlson = open("carlson.log", "r")
+        old_carlson = int(f_carlson.read())
+        f_carlson.close()
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(old_carlson + 1))
+        f_carlson.close()
+    except FileNotFoundError:
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(1))
+        f_carlson.close()
+
+if cehdCount == cfansCount and (cehdCount > cseCount) and (cehdCount > claCount) and (cehdCount > carlsonCount) and (cehdCount > cdesCount) and (cehdCount > cbsCount):
+    print ("You have a tie high score with the College of Design and the College of Food, Agriculture and Natural Resources.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_cfans = open("cfans.log", "r")
+        old_cfans = int(f_cfans.read())
+        f_cfans.close()
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(old_cfans + 1))
+        f_cfans.close()
+    except FileNotFoundError:
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(1))
+        f_cfans.close()
+
+if cehdCount == carlsonCount and (cehdCount > cseCount) and (cehdCount > claCount) and (cehdCount > cfansCount) and (cehdCount > cdesCount) and (cehdCount > cbsCount):
+    print ("You have a tie high score with the College of Design and the Carlson School of Management.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_carlson = open("carlson.log", "r")
+        old_carlson = int(f_carlson.read())
+        f_carlson.close()
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(old_carlson + 1))
+        f_carlson.close()
+    except FileNotFoundError:
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(1))
+        f_carlson.close()
+
+if cehdCount == cdesCount and (cehdCount > cseCount) and (cehdCount > claCount) and (cehdCount > carlsonCount) and (cehdCount > cfansCount) and (cehdCount > cbsCount):
+    print ("You have a tie high score with the College of Design and the College of Food, Agriculture and Natural Resources.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(old_cdes + 1))
+        f_cdes.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+
+if cehdCount == cseCount and (cehdCount > claCount) and (cehdCount > carlsonCount) and (cehdCount > cfansCount) and (cehdCount > cdesCount) and (cehdCount > cbsCount):
+    print ("You have a tie high score with the College of Design and the Carlson School of Management.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_cse = open("cse.log", "r")
+        old_cse = int(f_cse.read())
+        f_cse.close()
+        f_cse = open("cse.log", "w")
+        f_cse.write(str(old_cse + 1))
+        f_cse.close()
+    except FileNotFoundError:
+        f_cse = open("cse.log", "w")
+        f_cse.write(str(1))
+        f_cse.close()
+
+if cehdCount == claCount and (cehdCount > cseCount) and (cehdCount > carlsonCount) and (cehdCount > cfansCount) and (cehdCount > cdesCount) and (cehdCount > cbsCount):
+    print ("You have a tie high score with the College of Design and the College of Food, Agriculture and Natural Resources.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(old_cla + 1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+
+if cdesCount == cbsCount and (cehdCount > cseCount) and (cehdCount > claCount) and (cehdCount > carlsonCount) and (cehdCount > cfansCount) and (cehdCount > cdesCount):
+    print ("You have a tie high score with the College of Design and the Carlson School of Management.")
+    print ("We recommend that you take a look at both colleges and see which one fits best to your needs.")
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(old_cehd + 1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cdes.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+    try:
+        f_cbs = open("cbs.log", "r")
+        old_cbs = int(f_cbs.read())
+        f_cbs.close()
+        f_cbs = open("cbs.log", "w")
+        f_cbs.write(str(old_cbs + 1))
+        f_cbs.close()
+    except FileNotFoundError:
+        f_cbs = open("cfans.log", "w")
+        f_cbs.write(str(1))
+        f_cbs.close()
+
 
 #Max Score Situation
 if cdesCount == 5 and cdesCount == cfansCount == cseCount == claCount == cbsCount == carlsonCount:
