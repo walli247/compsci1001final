@@ -164,22 +164,88 @@ if (cseCount > claCount) and (cseCount > carlsonCount) and (cseCount > cfansCoun
 
 if (claCount > cseCount) and (claCount > carlsonCount) and (claCount > cfansCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print("We suggest for you to apply to the College of Liberal Arts based off of your scores.")
-
+    try:
+        f_cla = open("cla.log", "r")
+        old_cla = int(f_cla.read())
+        f_cla.close()
+        f_cla = open("cls.log","w")
+        f_cla.write(str(old_cla+1))
+        f_cla.close()
+    except FileNotFoundError:
+        f_cla = open("cla.log", "w")
+        f_cla.write(str(1))
+        f_cla.close()
+        
 if (carlsonCount > cseCount) and (carlsonCount > claCount) and (carlsonCount > cfansCount) and (carlsonCount > cdesCount) and (carlsonCount > cseCount) and (carlsonCount > cehdCount):
     print("We suggest for you to apply to the Carlson School of Management based off of your scores.")
-
+    try:
+        f_carlson = open("carlson.log", "r")
+        old_carlson = int(f_carlson.read())
+        f_carlson.close()
+        f_carlson = open("carlson.log","w")
+        f_carlson.write(str(old_carlson+1))
+        f_carlson.close()
+    except FileNotFoundError:
+        f_carlson = open("carlson.log", "w")
+        f_carlson.write(str(1))
+        f_carlson.close()
+        
 if (cfansCount > cseCount) and (cfansCount > claCount) and (cfansCount > carlsonCount) and (claCount > cdesCount) and (claCount > cbsCount) and (claCount > cehdCount):
     print("We suggest for you to apply to the College of Food, Agriculture and Natural Resources based off of your scores.")
-
+    try:
+        f_cfans = open("cfans.log", "r")
+        old_cfans = int(f_cfans.read())
+        f_cfans.close()
+        f_cfans = open("cfans.log","w")
+        f_cfans.write(str(old_cfans+1))
+        f_cfans.close()
+    except FileNotFoundError:
+        f_cfans = open("cfans.log", "w")
+        f_cfans.write(str(1))
+        f_cfans.close()
+        
 if (cdesCount > cseCount) and (cdesCount > claCount) and (cdesCount > carlsonCount) and (cdesCount > cfansCount) and (cdesCount > cbsCount) and (cdesCount > cehdCount):
     print("We suggest for you to apply to the College of Design based off of your scores.")
-
+    try:
+        f_cdes = open("cdes.log", "r")
+        old_cdes = int(f_cdes.read())
+        f_cdes.close()
+        f_cdes = open("cdes.log","w")
+        f_cdes.write(str(old_cdes+1))
+        f_cdes.close()
+    except FileNotFoundError:
+        f_cdes = open("cdes.log", "w")
+        f_cdes.write(str(1))
+        f_cdes.close()
+        
 if (cbsCount > cseCount) and (cbsCount > claCount) and (cbsCount > carlsonCount) and (cbsCount > cfansCount) and (cbsCount > cdesCount) and (cbsCount > cehdCount):
     print("We suggest for you to apply to the College of Biological Sciences based off of your scores.")
-
+    try:
+        f_cbs = open("cbs.log", "r")
+        old_cbs = int(f_cbs.read())
+        f_cbs.close()
+        f_cbs = open("cbs.log","w")
+        f_cbs.write(str(old_cbs+1))
+        f_cbs.close()
+    except FileNotFoundError:
+        f_cbs = open("carlson.log", "w")
+        f_cbs.write(str(1))
+        f_cbs.close()
+        
 if (cehdCount > cseCount) and (cehdCount > claCount) and (cehdCount > carlsonCount) and (cehdCount > cfansCount) and (cehdCount > cdesCount) and (cehdCount > cbsCount):
     print("We suggest for you to apply to the College of Education and Human Development based off of your scores.")
-
+    try:
+        f_cehd = open("cehd.log", "r")
+        old_cehd = int(f_cehd.read())
+        f_cehd.close()
+        f_cehd = open("cehd.log","w")
+        f_cehd.write(str(old_cehd+1))
+        f_cehd.close()
+    except FileNotFoundError:
+        f_cehd = open("cehd.log", "w")
+        f_cehd.write(str(1))
+        f_cehd.close()
+        
 f_total = open("totals.log", "r")
 total = int(f_total.read())
 f_total.close()
